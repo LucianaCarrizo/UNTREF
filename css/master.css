@@ -15,6 +15,7 @@ img,video{
     width: 100%;
 }
 
+
 html{
     font-size: 10px;  /*Por defecto la base es 16px*/
 }
@@ -25,42 +26,7 @@ body{
 }
 
 /*=== Aplicando CSS al encabezado===*/
-#encabezado{
-    display: grid;
-    justify-content: space-between;
-    align-items: center;
-    position: fixed;
-    background-color: rgba(255,255,255,0.95);
-    z-index: 1000 ;
-}
-#opciones{
-    justify-content: space-around;   
-}
-
-ul#opciones li a{
-    font-size: 1.8rem;
-    color: black;
-    position: relative;   
-}
-
-ul#opciones li a::after{
-    content: '';
-    width: 0%;
-    background-color: blue;
-    height: 4px;
-    position: absolute;
-    left: 0;
-    bottom: -10px;
-    transition: all 0.9s;
-}
-
-ul#opciones li a:hover::after{
-    width: 100%;
-}
-
-ul#opciones li a:hover{
-    color: blue;
-}
+/*VOLER A PONER TODO ACA MEJOR*/
 
 #logo{
     width: 50%;
@@ -94,13 +60,6 @@ ul#opciones li a:hover{
     width: 60%;
 }
 
-section table{
-    width: 100%;
-    padding: 10px;   
-    position: relative; 
-    
-}
-
 .titulo{
     position: relative;
     font-family: Arial, Helvetica, sans-serif;
@@ -110,36 +69,89 @@ section table{
     padding: 20px;
     width: 100%;
     text-align: left;
+    margin-top: 1%;
+}
+.subtitulo{
+    position: relative;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 2rem;
+    color: white;
+    /*background-color: rgba(0,0,0, 0.6);*/
+    padding: 20px;
+    width: 100%;
+    text-align: center;
+    margin-top: 1%;
 }
 
 #resaltar{
     font-size: 4rem;
 }
-#contacto{
-    font-size: 3.5rem ;
+#formularioContacto{
+    display: grid;
 }
-#redes{
+
+/*#redes{
     display: grid;
     grid-template-columns: repeat(3,1fr);
     gap: 10px;
-}
+}*/
 
 @media (min-width: 360px) {
-    
     #encabezado{
         display: grid;
         grid-template-columns: 1fr 2fr;
+        justify-content: space-between;
         align-items: center;
+        position: fixed;
+        background-color: rgba(255,255,255,0.95);
+        z-index: 1000 ;
     }
-    #opciones{
+    /*#encabezado{
+        display: grid;
+        grid-template-columns: 1fr 2fr;
+        align-items: center;
+    }*/
+    /*#opciones{
         display: grid;
         grid-template-columns: repeat(4,2fr);    
+    }*/
+    #opciones{
+        display: grid;
+        grid-template-columns: repeat(4,2fr);
+        justify-content: space-around;   
+    }
+    
+    ul#opciones li a{
+        font-size: 1.8rem;
+        color: black;
+        position: relative;   
+    }
+    
+    ul#opciones li a::after{
+        content: '';
+        width: 0%;
+        background-color: blue;
+        height: 4px;
+        position: absolute;
+        left: 0;
+        bottom: -10px;
+        transition: all 0.9s;
+    }
+    
+    ul#opciones li a:hover::after{
+        width: 100%;
+    }
+    
+    ul#opciones li a:hover{
+        color: blue;
     } 
     #secciones{
         display: grid;
         grid-template-columns: 1fr 1fr;
+        margin-left: 10px;
+        padding-top: 10px;
     }
-    /*APLIANDO CSS AL FOOTER*/
+    /*APLICANDO CSS AL FOOTER*/
     #piePagina{
         display: grid;
         grid-template-columns: 1fr 2fr 1fr 0.5fr;
@@ -148,11 +160,12 @@ section table{
         background-color: darkgrey;
         color: white;
     }
-    #redeSociales{
+    /*#redeSociales{
         display: grid;
         grid-template-columns: repeat(3, 1fr);
         gap: 20px;
-    }
+    }*/
+
     ion-icon{
         color: white;
         font-size: 2rem;
@@ -160,25 +173,56 @@ section table{
 }
 
 @media (min-width: 768px) {
-
     #encabezado{
         display: grid;
         grid-template-columns: 1fr 2fr;
+        justify-content: space-between;
         align-items: center;
+        position: fixed;
+        background-color: rgba(255,255,255,0.95);
+        z-index: 1000 ;
     }
     #opciones{
         display: grid;
-        grid-template-columns: repeat(4,2fr);  
+        grid-template-columns: repeat(4,2fr);
+        justify-content: space-around;   
     }
+    
+    ul#opciones li a{
+        font-size: 1.8rem;
+        color: black;
+        position: relative;   
+    }
+    
+    ul#opciones li a::after{
+        content: '';
+        width: 0%;
+        background-color: blue;
+        height: 4px;
+        position: absolute;
+        left: 0;
+        bottom: -10px;
+        transition: all 0.9s;
+    }
+    
+    ul#opciones li a:hover::after{
+        width: 100%;
+    }
+    
+    ul#opciones li a:hover{
+        color: blue;
+    } 
     #secciones{
         display: grid;
         grid-template-columns: 1fr 1fr;
+        margin-left: 10px;
+        padding-top: 10px;
     }
    
     /*APLIANDO CSS AL FOOTER*/
     #piePagina{
         display: grid;
-        grid-template-columns: 1fr 2fr 1fr 0.5fr;
+        grid-template-columns: 0.5fr 4fr 0.5fr 0.5fr;
         justify-items: center;
         align-items: center;
         background-color: darkgrey;
@@ -186,16 +230,80 @@ section table{
     }
     #redeSociales{
         display: grid;
-        grid-template-columns: repeat(3, 1fr);
+        padding-top: 10px;
+        margin-left: 70px;
         gap: 20px;
     }
     ion-icon{
         color: white;
-        font-size: 2rem;
+        font-size: 3rem;
     }
 }
 
 /*X-Large devices (large desktops, 1200px and up)*/
 @media (min-width: 1200px) { 
+    #encabezado{
+        display: grid;
+        grid-template-columns: 1fr 2fr;
+        justify-content: space-between;
+        align-items: center;
+        position: fixed;
+        background-color: rgba(255,255,255,0.95);
+        z-index: 1000 ;
+    }
+    #opciones{
+        display: grid;
+        grid-template-columns: repeat(4,2fr);
+        justify-content: space-around;   
+    }
     
+    ul#opciones li a{
+        font-size: 1.8rem;
+        color: black;
+        position: relative;   
+    }
+    
+    ul#opciones li a::after{
+        content: '';
+        width: 0%;
+        background-color: blue;
+        height: 4px;
+        position: absolute;
+        left: 0;
+        bottom: -10px;
+        transition: all 0.9s;
+    }
+    
+    ul#opciones li a:hover::after{
+        width: 100%;
+    }
+    
+    ul#opciones li a:hover{
+        color: blue;
+    } 
+    #secciones{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        margin-left: 10px;
+        padding-top: 10px;
+    }
+   
+    /*APLIANDO CSS AL FOOTER*/
+    #piePagina{
+        display: grid;
+        grid-template-columns: 1fr 2fr 1fr 0.5fr;
+        justify-items: center;
+        align-items: baseline;
+        background-color: darkgrey;
+        color: white;
+    }
+    /*#redeSociales{
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 20px;
+    }*/
+    ion-icon{
+        color: white;
+        font-size: 2rem;
+    }
 }
